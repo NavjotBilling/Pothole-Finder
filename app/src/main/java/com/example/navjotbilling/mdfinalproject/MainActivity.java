@@ -1,10 +1,15 @@
 package com.example.navjotbilling.mdfinalproject;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -27,8 +32,10 @@ public class MainActivity extends AppCompatActivity {
             mAccel = mAccel * 0.9f + delta * 0.1f; // perform low-cut filter
 
             if (mAccel > 2) {
-                Toast toast = Toast.makeText(getApplicationContext(), "Device has shaken.", Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(getApplicationContext(), "PotHole Found!", Toast.LENGTH_LONG);
                 toast.show();
+
+                showNotificaiton("PotHole service", "Pothole Found!");
             }
         }
 
@@ -59,6 +66,24 @@ public class MainActivity extends AppCompatActivity {
         mAccel = 0.00f;
         mAccelCurrent = SensorManager.GRAVITY_EARTH;
         mAccelLast = SensorManager.GRAVITY_EARTH;
+    }
+
+    private void showNotificaiton(String title, String message) {
+        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(getApplicationContext());
+        stackBuilder.addParentStack(MainActivity.class);
+        stackBuilder.addNextIntent(intent);
+        PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext());
+        mBuilder = new NotificationCompat.Builder(getApplicationContext())
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentTitle(title)
+                .setContentText(message)
+                .setAutoCancel(true)
+                .setStyle(new NotificationCompat.BigTextStyle().bigText(message));
+        mBuilder.setContentIntent(resultPendingIntent);
+        NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        nm.notify(0, mBuilder.build());
     }
 
 
