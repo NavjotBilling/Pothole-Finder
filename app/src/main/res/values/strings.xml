@@ -1,6 +1,11 @@
 <resources>
-    <string name="app_name">MDFinalProject</string>
-    <string name="menu_settings">Settings</string>
-    <string name="Continue">Continue</string>
-
+    <string name="destination">Destination</string>
+    <string name="Continue">continue</string>
+    <string name="history">History</string>>
+    <string name="numFound">Number Found</string>
+    <string name="Location">Location</string>
+    <string name="app_name">FinalProject2</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_pot_hole_display">potHoleDisplay</string>
 </resources>
