@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
         VideoView videoView = (VideoView) findViewById(R.id.videoView);
         videoView.setMediaController(new android.widget.MediaController(MainActivity.this));
-        Uri video = Uri.parse("http://www.androidbegin.com/tutorial/AndroidCommercial.3gp");
+        Uri video = Uri.parse("rtsp://r3---sn-jc47lu7k.googlevideo.com/Ck0LENy73wIaRAmvI4nqm33u3BMYDSANFC2gGV1WMOCoAUIJbXYtZ29vZ2xlSARSBXdhdGNoYNCf3-aRt8eVVooBC3NTM3MxSjR6cGVnDA==/9598B162742207A0573F4FF55C78C8D34E2AFEC5.4510D0984779219F906E6C75BBA5B8FDE85E13CD/yt6/1/video.3gp");
         videoView.setVideoURI(video);
         videoView.start();
 
