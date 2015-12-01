@@ -55,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
 
         videoview = (VideoView) findViewById(R.id.videoView);
 
+        // progress bar
+
         pDialog = new ProgressDialog(MainActivity.this);
         pDialog.setMessage("Buffering...");
         pDialog.setIndeterminate(false);

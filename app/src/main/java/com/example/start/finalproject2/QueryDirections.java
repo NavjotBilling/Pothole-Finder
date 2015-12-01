@@ -15,9 +15,7 @@ import java.util.List;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-/**
- * Created by 100461439 on 11/30/2015.
- */
+
 public class QueryDirections extends AsyncTask<String, Void, String> {
     private DirectionListener listener = null;
     private Exception exception = null;

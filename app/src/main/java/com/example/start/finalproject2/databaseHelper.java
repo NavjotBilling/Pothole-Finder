@@ -9,9 +9,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
-/**
- * Created by 100461439 on 11/30/2015.
- */
+
 public class databaseHelper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION=1;
     public static final String DATABASE_FILENAME= "potHoles.db";
