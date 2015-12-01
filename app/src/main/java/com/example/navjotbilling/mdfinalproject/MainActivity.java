@@ -51,7 +51,7 @@ private void Continue (){
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Continue();
 
         videoview = (VideoView) findViewById(R.id.videoView);
 
@@ -89,11 +89,10 @@ private void Continue (){
 
         VideoView videoView = (VideoView) findViewById(R.id.videoView);
         videoView.setMediaController(new android.widget.MediaController(MainActivity.this));
-        Uri video = Uri.parse("http://www.androidbegin.com/tutorial/AndroidCommercial.3gp");
+        Uri video = Uri.parse("rtsp://r2---sn-jc47lu7s.googlevideo.com/Ck0LENy73wIaRAlg-bfFxoW2JRMYDSANFC0-Al1WMOCoAUIJbXYtZ29vZ2xlSARSBXdhdGNoYNT9xs609uuGVooBC1hlZmljd1dFMTdvDA==/E3EA4B05E7CD01127FAE1A571F1A993B314AD0A8.341D8B910D685D3694EF0EE27FAF235E531456DE/yt6/1/video.3gp");
         videoView.setVideoURI(video);
         videoView.start();
 
-        Continue();
 
     }
 
